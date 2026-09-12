@@ -49,6 +49,7 @@
   };
 
   var STUDIO = 'https://deepseekv5.github.io/jutian-studio/';
+  var AGENT = 'https://deepseekv5.github.io/jutian-agent/';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function esc(s) {
@@ -82,13 +83,13 @@
       '<article class="card card-soon reveal" style="transition-delay:240ms">' +
         '<div class="card-top">' +
           '<div class="card-icon"><svg viewBox="0 0 24 24" width="22" height="22">' + ICONS.agent + '</svg></div>' +
-          '<div class="card-meta"><span class="star">COMING</span><span>Agent</span><span>即将发布</span></div>' +
+          '<div class="card-meta"><span class="star">PREVIEW</span><span>Agent</span><span>预览版官网已上线</span></div>' +
         '</div>' +
         '<h3>巨天 Agent</h3>' +
-        '<div class="card-sub">AGENT RUNTIME / AGI</div>' +
-        '<p class="card-desc">能自主规划、调用工具、保持长期记忆的智能体运行时，由巨天工作室筹备中。</p>' +
-        '<ul class="tag-list"><li>规划器</li><li>工具总线</li><li>记忆层</li></ul>' +
-        '<div class="card-foot"><a class="link-btn" href="' + STUDIO + '#agent" target="_blank" rel="noopener">查看详情' + arrow + '</a></div>' +
+        '<div class="card-sub">DESKTOP AI AGENT</div>' +
+        '<p class="card-desc">运行在桌面上的 AI 智能体：操作终端、管理文件、编写代码、生成 PPT、语音对话，五档思考程度由你定。</p>' +
+        '<ul class="tag-list"><li>Electron</li><li>本地记忆</li><li>语音对话</li></ul>' +
+        '<div class="card-foot"><a class="link-btn" href="' + AGENT + '" target="_blank" rel="noopener">访问官网' + arrow + '</a></div>' +
       '</article>';
 
     grid.innerHTML = html;

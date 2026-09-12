@@ -252,6 +252,7 @@ main { position: relative; z-index: 2; }
 .studio-meta { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 28px 0 34px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .18em; color: var(--text-faint); flex-wrap: wrap; }
 .studio-meta em { width: 4px; height: 4px; border-radius: 50%; background: var(--a1); opacity: .6; }
 .studio-url { display: block; margin-top: 18px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; color: var(--text-faint); }
+.studio-btns { display: flex; justify-content: center; gap: 13px; flex-wrap: wrap; }
 
 /* ===== 联系 ===== */
 .contact-box { text-align: center; padding: 78px 34px; border-radius: 34px; border: 1px solid var(--border); background: var(--surface); -webkit-backdrop-filter: var(--glass); backdrop-filter: var(--glass); box-shadow: var(--shadow); position: relative; overflow: hidden; }
