@@ -2,35 +2,39 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<title>页面跳转中… · deepseekv5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>站点公告 · 神岛方舟</title>
 <meta name="robots" content="noindex" />
 <style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#06080f;color:#c9d4e8;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
-  .box{max-width:520px;padding:40px;text-align:center;line-height:1.8}
-  a{color:#5ce1ff}
-  .btn{display:inline-block;margin:8px;padding:10px 22px;border:1px solid #2a3350;border-radius:10px;text-decoration:none}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#06080f;color:#c9d4e8;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center}
+  .box{max-width:560px;padding:48px 32px;line-height:2}
+  h1{font-size:22px;color:#e8eefb;margin:0 0 18px}
+  .notice{font-size:17px;color:#ffd76a;letter-spacing:1px;margin:18px 0}
+  p{font-size:13px;color:#7d8aa5;margin:6px 0}
+  a{color:#5ce1ff;text-decoration:none}
 </style>
 </head>
 <body>
-<div class="box" id="msg">正在跳转…</div>
+<div class="box">
+  <h1>神岛方舟 · 神奇代码岛纪念站</h1>
+  <div class="notice">由于相应版权问题，本站被迫下架。</div>
+  <p>感谢每一位访客曾经到访。那些一起玩过的地图、听过的音乐，仍然留在大家的记忆里。</p>
+  <p>完整离线版本地运行，不再提供在线访问。</p>
+  <p style="margin-top:26px"><a href="https://deepseekv5.github.io/">← 返回作者主页</a></p>
+</div>
 <script>
 (function () {
   var p = location.pathname;
   var prefixes = ['/map/', '/map-hall', '/model-hall', '/model', '/profile/', '/music',
     '/play', '/exp/', '/creator', '/create', '/tools', '/legacy', '/api-docs',
-    '/box3', '/search', '/auth/'];
-  var isMemorial = prefixes.some(function (x) { return p.indexOf(x) === 0; });
-  if (isMemorial) {
-    // 神岛方舟纪念站部署在 /shendao-ark/ 子路径下，这里补上前缀
-    location.replace('https://deepseekv5.github.io/shendao-ark' + p + location.search + location.hash);
-    return;
+    '/box3', '/search', '/auth/', '/shendao-ark'];
+  if (!prefixes.some(function (x) { return p.indexOf(x) === 0; })) {
+    document.title = '页面未找到 · deepseekv5';
+    document.querySelector('.box').innerHTML =
+      '<div style="font-size:44px;margin-bottom:8px">404</div>' +
+      '<p>这个页面不存在。</p>' +
+      '<a href="/">← 返回个人主页</a>';
   }
-  document.title = '页面未找到 · deepseekv5';
-  document.getElementById('msg').innerHTML =
-    '<div style="font-size:44px;margin-bottom:8px">404</div>' +
-    '<p>这个页面不存在。</p>' +
-    '<a class="btn" href="/">← 返回个人主页</a>' +
-    '<a class="btn" href="/shendao-ark/">神岛方舟 · 纪念站</a>';
 })();
 </script>
 </body>
