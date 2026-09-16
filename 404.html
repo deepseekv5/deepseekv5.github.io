@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="robots" content="noindex" />
 <title>页面未找到 · deepseekv5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#06080f;color:#c9d4e8;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center;line-height:1.8}
-  .box{max-width:520px;padding:40px}
-  .code{font-size:48px;color:#5ce1ff;margin-bottom:8px}
-  a{color:#5ce1ff;text-decoration:none;border:1px solid #2a3350;border-radius:10px;padding:10px 22px;display:inline-block;margin-top:14px}
+  :root{--paper:#f4f2ec;--ink:#16150f;--ink-2:#4b4739;--rule:#c9c3b4;--accent:#2f5d46;
+    --serif:"Iowan Old Style",Palatino,Georgia,"Songti SC",serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace}
+  body{margin:0;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.78}
+  .box{max-width:520px;margin:0 auto;padding:40px 26px}
+  .code{font-family:var(--serif);font-size:64px;font-weight:700;letter-spacing:-.03em;line-height:1}
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-2);margin:14px 0 22px;text-transform:uppercase}
+  hr{border:0;height:1px;background:var(--rule);margin:0 0 22px}
+  p{color:var(--ink-2);font-size:15px;margin:0 0 6px}
+  ul{margin:20px 0 0;padding:0;list-style:none;font-size:14px}
+  li{padding:6px 0;border-bottom:1px solid var(--rule)}
+  a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);border-bottom:1px solid var(--accent)}
 </style>
 </head>
 <body>
 <div class="box">
   <div class="code">404</div>
-  <p>这个页面不存在。</p>
-  <a href="/">← 返回个人主页</a>
+  <div class="mono">Page not found</div>
+  <hr />
+  <p>这个地址下没有内容。可能是链接过期，或者页面已经移走。</p>
+  <ul>
+    <li><a href="/">返回个人主页</a></li>
+    <li><a href="https://deepseekv5.github.io/jutian-studio/">巨天工作室官网</a></li>
+    <li><a href="https://github.com/deepseekv5">GitHub 仓库</a></li>
+  </ul>
 </div>
 </body>
 </html>
