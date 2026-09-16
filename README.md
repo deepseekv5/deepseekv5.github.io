@@ -1,36 +1,27 @@
-# deepseekv5 · 个人主页
+# deepseekv5 个人主页
 
-个人主页源码，纯静态，由 GitHub Pages 托管在 <https://deepseekv5.github.io/>。
+纯静态站点，GitHub Pages 托管：<https://deepseekv5.github.io/>
 
-## 目录结构
+## 目录
 
 ```
-.
-├── index.html
-├── assets/
-│   ├── css/style.css
-│   └── js/main.js
-└── README.md
+index.html
+assets/css/style.css
+assets/js/main.js      # 主题切换、移动端菜单、导航高亮
 ```
 
-## 本地预览
+## 改内容
 
-```bash
-python3 -m http.server 8124
-# 打开 http://127.0.0.1:8124
-```
-
-## 常见修改
+文案全部在 `index.html`，无构建步骤。
 
 | 想改什么 | 改哪儿 |
 | --- | --- |
-| 头像 | `index.html` 中两处 `avatars.githubusercontent.com/u/321712656` 的 `img`（加载失败会自动降级为 d5 字样） |
-| 作品列表 | `assets/js/main.js` 里的 `PROJECTS` 数组 |
-| 工作室跳转链接 | `assets/js/main.js` 顶部 `STUDIO` 常量 |
-| 配色 / 主题变量 | `assets/css/style.css` 顶部 `:root` 与 `[data-theme]` 块 |
-| 联系邮箱 | `index.html` 联系区底部注释掉的 mailto 按钮 |
+| 强调色 | `assets/css/style.css` 中 `--accent`（浅色 `#2f5d46`，深色 `#7fb79a`） |
+| 自我介绍 | 「自我介绍」章节的两段正文 |
+| 作品 | 「作品」章节的 `<article class="entry">` |
+| 想法 / 记录 | 同名章节的 `<ul class="log">` 条目 |
 
-## 相关站点
+## 相关
 
-- 巨天工作室官网：<https://deepseekv5.github.io/jutian-studio/>
-- GitHub：<https://github.com/deepseekv5>
+- 巨天工作室：<https://deepseekv5.github.io/jutian-studio/>
+- 巨天 Agent：<https://deepseekv5.github.io/jutian-agent/>

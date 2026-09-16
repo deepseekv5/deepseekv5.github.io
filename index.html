@@ -1,221 +1,480 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>deepseekv5 · 个人主页</title>
-<meta name="description" content="deepseekv5 的个人主页：一名来自中国的中学生、独立开发者。做桌面工具、网页图形与自动化，也是巨天工作室的主理人。" />
-<meta name="theme-color" content="#06080f" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230a0e18'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='bold' fill='%235ce1ff' text-anchor='middle'%3Ed5%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="deepseekv5 的个人主页。来自中国的中学生、独立开发者，巨天工作室主理人。写桌面工具、网页图形与自动化，目前在打磨桌面 AI 智能体巨天 Agent。" />
+<meta name="theme-color" content="#f4f2ec" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f2ec'/%3E%3Cpath d='M8 7h16v3H11v12h13v3H8z' fill='%232f5d46'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<div class="bg-layer" aria-hidden="true">
-  <canvas id="net"></canvas>
-  <div class="grid-overlay"></div>
-  <div class="orb orb-a"></div>
-  <div class="orb orb-b"></div>
-  <div class="noise"></div>
-</div>
-<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-<div class="progress" id="progress" aria-hidden="true"><span></span></div>
-
-<header class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#home">
-      <span class="avatar-sm" id="brandAvatar">
-        <img src="https://avatars.githubusercontent.com/u/321712656?v=4&s=80" alt="deepseekv5" width="34" height="34" />
-      </span>
-      <span class="brand-text">
-        <strong>deepseekv5</strong>
-        <em>PERSONAL SITE</em>
-      </span>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="active"><i>01</i>首页</a>
-      <a href="#about"><i>02</i>关于</a>
-      <a href="#work"><i>03</i>作品</a>
-      <a href="#studio"><i>04</i>工作室</a>
-      <a href="#contact"><i>05</i>联系</a>
+<header class="head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top"><b>deepseekv5</b><span>PERSONAL SITE</span></a>
+    <nav class="nav" id="nav">
+      <a href="#intro">自我介绍</a>
+      <a href="#now">在做什么</a>
+      <a href="#work">作品</a>
+      <a href="#tools">工具</a>
+      <a href="#notes">想法</a>
+      <a href="#log">记录</a>
+      <a href="#contact">联系</a>
     </nav>
-
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换主题">
-        <svg class="ico-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
-        </svg>
-        <svg class="ico-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-        </svg>
+    <div class="head-tools">
+      <a class="tools-link" href="https://github.com/deepseekv5" target="_blank" rel="noopener">GITHUB</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深浅主题">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4" stroke-linecap="round"/></svg>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 13.2A8.6 8.6 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg>
       </button>
-      <a class="btn btn-ghost nav-github" href="https://github.com/deepseekv5" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-          <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5z"/>
-        </svg>
-        <span>GitHub</span>
-      </a>
-      <button class="icon-btn burger" id="burger" type="button" aria-label="菜单" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" id="burger" type="button" aria-label="菜单"><i></i></button>
     </div>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <div class="pill reveal">
-          <span class="dot"></span> 来自中国 · 中学生 · 独立开发者
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <dl class="hero-meta">
+        <div><dt>Name</dt><dd>deepseekv5</dd></div>
+        <div><dt>Based in</dt><dd>中国</dd></div>
+        <div><dt>Occupation</dt><dd>在读中学生</dd></div>
+        <div><dt>Doing</dt><dd>独立开发</dd></div>
+        <div><dt>Studio</dt><dd>巨天工作室</dd></div>
+      </dl>
+
+      <h1 class="hero-title">
+        你好，我是 deepseekv5
+        <small>Student, Developer, One-person Studio</small>
+      </h1>
+
+      <div class="hero-body">
+        <div>
+          <p class="hero-lede">
+            我是一名来自中国的中学生。课余时间写代码，主要做三件事：
+            把麻烦的操作包装成图形工具的桌面应用、在浏览器里重建 3D 场景、
+            以及用自动化脚本去增强别人已经做好的编辑器。
+          </p>
+          <p class="hero-lede">
+            这些东西都放在 GitHub 上，全部开源。我自己一个人做，
+            所以更新节奏取决于课业松紧——这点我不掩饰。
+          </p>
         </div>
-        <h1 class="reveal">
-          <span class="line"><span>你好，我是</span></span>
-          <span class="line"><span class="grad">deepseekv5</span></span>
-        </h1>
-        <p class="lede reveal">
-          写工具、做网页、折腾 3D 和自动化。脑子里冒出「应该有个东西能干这个」的念头，
-          就把它做出来——做完了就开源，谁都能拿去用。
-        </p>
-        <div class="hero-cta reveal">
-          <a class="btn btn-primary magnetic" href="#work">看看我做的东西</a>
-          <a class="btn btn-ghost magnetic" href="#studio">进入巨天工作室</a>
-        </div>
-        <ul class="hero-stats reveal">
-          <li><b data-count="3">0</b><span>开源项目</span></li>
-          <li><b data-count="3">0</b><span>技术方向</span></li>
-          <li><b data-count="1">0</b><span>工作室</span></li>
-          <li><b data-count="100" data-suffix="%">0</b><span>代码开源</span></li>
-        </ul>
+        <aside class="hero-aside">
+          <span class="label">关于这个站</span>
+          <p>
+            这里是我的个人主页，用来放作品索引和一些零碎想法。
+            工作室的正式信息在巨天工作室官网，产品介绍在巨天 Agent 官网，
+            这一页只讲我自己。
+          </p>
+        </aside>
       </div>
 
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="avatar-stage">
-          <span class="ring r1"></span>
-          <span class="ring r2"></span>
-          <span class="ring r3"></span>
-          <div class="avatar-lg" id="heroAvatar">
-            <img src="https://avatars.githubusercontent.com/u/321712656?v=4&s=320" alt="deepseekv5" width="180" height="180" />
+      <nav class="toc">
+        <div class="toc-list">
+          <a href="#intro"><i>01</i>自我介绍</a>
+          <a href="#now"><i>02</i>现在在做什么</a>
+          <a href="#work"><i>03</i>作品</a>
+          <a href="#tools"><i>04</i>我用的工具</a>
+          <a href="#notes"><i>05</i>一些想法</a>
+          <a href="#log"><i>06</i>记录</a>
+          <a href="#contact"><i>07</i>联系</a>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="pull">
+      「与其做一个漂亮的半成品，不如做一个能跑的丑东西。」
+      <cite>—— 我判断要不要发布一个项目的标准</cite>
+    </p>
+  </div>
+
+  <!-- ============ 自我介绍 ============ -->
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="sec-num">01</span><h2>自我介绍</h2></div>
+        <p class="sec-note">尽量说实话，不包装。</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-side">
+          <span class="label">Background</span>
+          <h3 class="entry-name">一个放学后写代码的人</h3>
+        </div>
+        <div class="entry-body">
+          <p>
+            我目前在读中学，写代码的时间基本集中在放学后和周末。
+            这决定了我的项目有个共同特征：都是那种一两个星期能做出来的东西，
+            不会有宏大的架构，也不会有需要团队协作的规模。
+          </p>
+          <p>
+            开始做开源的原因很朴素——我自己在用某个工具时觉得别扭，
+            又找不到现成的解决方案，就只能自己写一个。写完发现别人可能也用得上，
+            就丢到 GitHub 上。巨天工作室这个名字，是在第三个项目之后才取的。
+          </p>
+          <p>
+            我对"优雅的架构"兴趣不大，对"能不能真的用起来"兴趣很大。
+            一个能跑的脚本比一份精美的设计文档有价值，这是我现在的看法，
+            也许过几年会变。
+          </p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-side">
+          <span class="label">Taste</span>
+          <h3 class="entry-name">我喜欢什么样的软件</h3>
+        </div>
+        <div class="entry-body">
+          <ul class="points">
+            <li><i>01</i><span>打开就能用，不需要先读二十页文档</span></li>
+            <li><i>02</i><span>报错说人话，能给出下一步该做什么</span></li>
+            <li><i>03</i><span>不联网也能跑核心功能</span></li>
+            <li><i>04</i><span>不收集数据，不弹窗求好评</span></li>
+            <li><i>05</i><span>卸载干净，不在系统里留下垃圾</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 在做什么 ============ -->
+  <section class="section" id="now">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="sec-num">02</span><h2>现在在做什么</h2></div>
+        <p class="sec-note">三条主线，外加一个正在打磨的产品。</p>
+      </div>
+
+      <ol class="numlist">
+        <li>
+          <span class="n">01</span>
+          <h3>桌面工具</h3>
+          <p>把命令行里那些需要查文档才能完成的流程，包装成一个双击就能用的应用。macOS 优先，因为它就是我每天在用的系统；能跨平台的尽量跨。代表作是 WineAppRunner。</p>
+        </li>
+        <li>
+          <span class="n">02</span>
+          <h3>网页与图形</h3>
+          <p>用 Three.js 在浏览器里做 3D 场景，以及用 Playwright 给现有编辑器注入增强。这类项目不需要用户安装任何东西，打开链接就是成品，我很喜欢这一点。代表作是 Arcadia Base 和 KittenN 主题。</p>
+        </li>
+        <li>
+          <span class="n">03</span>
+          <h3>自动化</h3>
+          <p>把重复劳动交给脚本。桌面工具里藏着大量可以自动化的环节，装依赖、改配置、批量重命名——这些事机器做比人做可靠得多。</p>
+        </li>
+        <li>
+          <span class="n">04</span>
+          <h3>巨天 Agent</h3>
+          <p>投入最多的一个：桌面 AI 智能体，能操作终端、管理文件、写代码、生成 PPT、语音对话。目前是预览版，还在打磨稳定性和错误提示，未开放下载。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 作品 ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="sec-num">03</span><h2>作品</h2></div>
+        <p class="sec-note">全部开源。点进去可以直接看代码。</p>
+      </div>
+
+      <article class="entry">
+        <div class="entry-side">
+          <span class="label">Work 01</span><br />
+          <span class="entry-state">已发布</span>
+          <h3 class="entry-name">KittenN Cyberpunk Editor</h3>
+          <dl class="entry-spec">
+            <div><dt>语言</dt><dd>JavaScript</dd></div>
+            <div><dt>许可</dt><dd>MIT</dd></div>
+            <div><dt>平台</dt><dd>三平台</dd></div>
+            <div><dt>更新</dt><dd>2026-08-28</dd></div>
+          </dl>
+        </div>
+        <div class="entry-body">
+          <p class="entry-sub">给积木编辑器换一套深色玻璃皮肤。</p>
+          <p>
+            起因只是晚上写代码时觉得编辑器太刺眼。实现方式不是插件，
+            而是用 Playwright 驱动本机 Chrome 打开编辑器再注入样式，
+            这样能复用真实登录态，也不用管浏览器版本差异。
+          </p>
+          <div class="entry-links">
+            <a class="tlink" href="https://github.com/deepseekv5/kittenN-cyberpunk-editor" target="_blank" rel="noopener">GitHub 仓库</a>
           </div>
         </div>
-        <div class="float-card c1"><span class="fc-label">LOCATION</span><span class="fc-value">China</span></div>
-        <div class="float-card c2"><span class="fc-label">FOCUS</span><span class="fc-value">Tools / WebGL</span></div>
-        <div class="float-card c3"><span class="fc-label">NEXT</span><span class="fc-value">巨天 Agent</span></div>
-      </div>
-    </div>
-    <a class="scroll-hint" href="#about" aria-label="向下滚动"><span></span></a>
-  </section>
+      </article>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="kicker"><i></i>ABOUT · 02</span>
-        <h2>我在做什么</h2>
-        <p>三条主线并行，偶尔互相串台。</p>
-      </header>
-
-      <div class="dir-grid">
-        <article class="dir reveal">
-          <span class="dir-idx">01</span>
-          <h3>桌面工具</h3>
-          <p>把命令行里那些繁琐步骤，包装成一个双击就能用的原生应用。macOS 优先，能跨平台的尽量跨。</p>
-          <ul class="tag-list"><li>Python</li><li>macOS</li><li>打包分发</li></ul>
-        </article>
-        <article class="dir reveal">
-          <span class="dir-idx">02</span>
-          <h3>网页与图形</h3>
-          <p>浏览器里跑 3D 世界、跑编辑器增强。不需要用户装任何东西，打开链接就是成品。</p>
-          <ul class="tag-list"><li>TypeScript</li><li>Three.js</li><li>WebGL</li></ul>
-        </article>
-        <article class="dir reveal">
-          <span class="dir-idx">03</span>
-          <h3>自动化</h3>
-          <p>重复的事交给脚本。用 Playwright 驱动浏览器，把人工流程压缩成一次运行。</p>
-          <ul class="tag-list"><li>Playwright</li><li>Node.js</li><li>Shell</li></ul>
-        </article>
-      </div>
-
-      <div class="quote reveal">
-        <p>能做出来就先做出来，做完开源，比讨论半年有意义。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work" class="section alt">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <span class="kicker"><i></i>WORK · 03</span>
-        <h2>作品</h2>
-        <p>全部开源在 GitHub，随便看、随便改、随便 fork。</p>
-      </header>
-      <div class="project-grid" id="projectGrid"></div>
-    </div>
-  </section>
-
-  <!-- STUDIO -->
-  <section id="studio" class="section studio">
-    <div class="wrap">
-      <div class="studio-card reveal">
-        <div class="studio-glow" aria-hidden="true"></div>
-        <span class="kicker"><i></i>STUDIO · 04</span>
-        <h2>巨天工作室</h2>
-        <p>
-          我主理的独立技术工作室。做桌面工具、浏览器自动化、3D 网页运行器，
-          以及桌面 AI 智能体 <b>巨天 Agent</b>（预览版官网已上线）。
-        </p>
-        <div class="studio-meta">
-          <span>独立运作</span><em></em><span>开源优先</span><em></em><span>Agent 预览版</span>
+      <article class="entry">
+        <div class="entry-side">
+          <span class="label">Work 02</span><br />
+          <span class="entry-state">已发布</span>
+          <h3 class="entry-name">Arcadia Base 网页运行器</h3>
+          <dl class="entry-spec">
+            <div><dt>语言</dt><dd>TypeScript</dd></div>
+            <div><dt>框架</dt><dd>Next.js / Three.js</dd></div>
+            <div><dt>方块</dt><dd>384 种</dd></div>
+            <div><dt>更新</dt><dd>2026-08-29</dd></div>
+          </dl>
         </div>
-        <div class="studio-btns">
-          <a class="btn btn-primary magnetic" href="https://deepseekv5.github.io/jutian-studio/" target="_blank" rel="noopener">
-            前往工作室官网
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost magnetic" href="https://deepseekv5.github.io/jutian-agent/" target="_blank" rel="noopener">
-            巨天 Agent 官网
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+        <div class="entry-body">
+          <p class="entry-sub">在浏览器里走进别人搭好的方块地图。</p>
+          <p>
+            最花时间的部分是把方块贴图在构建期合成图集，这样运行时完全离线。
+            其次是流体渲染——如果不同材质交界处不做内部面剔除，帧率会很难看。
+          </p>
+          <div class="entry-links">
+            <a class="tlink" href="https://github.com/deepseekv5/arcadia-base" target="_blank" rel="noopener">GitHub 仓库</a>
+          </div>
         </div>
-        <span class="studio-url">deepseekv5.github.io/jutian-studio</span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-side">
+          <span class="label">Work 03</span><br />
+          <span class="entry-state">已发布</span>
+          <h3 class="entry-name">WineAppRunner</h3>
+          <dl class="entry-spec">
+            <div><dt>语言</dt><dd>Python</dd></div>
+            <div><dt>平台</dt><dd>macOS</dd></div>
+            <div><dt>形态</dt><dd>独立 .app</dd></div>
+            <div><dt>更新</dt><dd>2026-08-28</dd></div>
+          </dl>
+        </div>
+        <div class="entry-body">
+          <p class="entry-sub">在 Mac 上跑 Windows 程序，不装虚拟机。</p>
+          <p>
+            Wine 本身很好用，但它要求你懂命令行、懂 X11、懂环境变量。
+            这个项目就是把这些门槛拆掉：选文件、点运行、看日志。
+          </p>
+          <div class="entry-links">
+            <a class="tlink" href="https://github.com/deepseekv5/WineAppRunner" target="_blank" rel="noopener">GitHub 仓库</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-side">
+          <span class="label">Work 04</span><br />
+          <span class="entry-state soon">预览版</span>
+          <h3 class="entry-name">巨天 Agent</h3>
+          <dl class="entry-spec">
+            <div><dt>类型</dt><dd>桌面智能体</dd></div>
+            <div><dt>平台</dt><dd>macOS / Windows</dd></div>
+            <div><dt>状态</dt><dd>未开放下载</dd></div>
+            <div><dt>版本</dt><dd>v4.0.0</dd></div>
+          </dl>
+        </div>
+        <div class="entry-body">
+          <p class="entry-sub">能干活的智能体，而不是聊天框。</p>
+          <p>
+            这是目前投入最多的项目，有独立的官网写得更详细。
+            一句话概括：它能操作终端和文件，能写代码和 PPT，能听懂人话也能说话。
+          </p>
+          <div class="entry-links">
+            <a class="tlink" href="https://deepseekv5.github.io/jutian-agent/" target="_blank" rel="noopener">巨天 Agent 官网</a>
+            <a class="tlink" href="https://deepseekv5.github.io/jutian-studio/" target="_blank" rel="noopener">巨天工作室</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 工具 ============ -->
+  <section class="section" id="tools">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="sec-num">04</span><h2>我用的工具</h2></div>
+        <p class="sec-note">配置清单。仅供参考，不构成推荐。</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>类别</th><th>用什么</th><th>为什么</th></tr></thead>
+          <tbody>
+            <tr><td>电脑</td><td>Mac（Apple Silicon）</td><td>续航和静音，宿舍里不吵</td></tr>
+            <tr><td>系统</td><td>macOS</td><td>Unix 环境 + 常用软件齐全，不用折腾</td></tr>
+            <tr><td>编辑器</td><td>VS Code</td><td>插件够多，远程与调试开箱即用</td></tr>
+            <tr><td>终端</td><td>系统自带 Terminal + zsh</td><td>不需要额外美化，够用</td></tr>
+            <tr><td>浏览器</td><td>Chrome</td><td>Playwright 自动化需要它</td></tr>
+            <tr><td>版本控制</td><td>Git + GitHub</td><td>免费，Pages 直接托管静态站</td></tr>
+            <tr><td>图形</td><td>Three.js</td><td>WebGL 里最省心的选择</td></tr>
+            <tr><td>桌面应用</td><td>Electron</td><td>一份代码两个平台</td></tr>
+            <tr><td>打包</td><td>PyInstaller / electron-builder</td><td>能产出可直接分发的安装包</td></tr>
+            <tr><td>文档</td><td>Markdown</td><td>写 README 和网页都用它</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
+  <!-- ============ 想法 ============ -->
+  <section class="section" id="notes">
     <div class="wrap">
-      <div class="contact-box reveal">
-        <span class="kicker"><i></i>CONTACT · 05</span>
-        <h2>找到我</h2>
-        <p>想聊项目、报 Bug、或者只是打个招呼，GitHub 是最快的方式。</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary magnetic" href="https://github.com/deepseekv5" target="_blank" rel="noopener">访问 GitHub 主页</a>
-          <a class="btn btn-ghost magnetic" href="https://github.com/deepseekv5?tab=repositories" target="_blank" rel="noopener">查看全部仓库</a>
+      <div class="sec-head">
+        <div><span class="sec-num">05</span><h2>一些想法</h2></div>
+        <p class="sec-note">零散的、可能会变的看法。按想到先后排列。</p>
+      </div>
+
+      <ul class="log">
+        <li>
+          <time>NOTE 01</time>
+          <div>
+            <h4>工具的价值取决于最短使用路径</h4>
+            <p>一个功能再强，如果每次用都要先读文档、再改配置，它的实际使用频率会趋近于零。我把"从下载到跑起来需要几步"当成硬指标。</p>
+          </div>
+        </li>
+        <li>
+          <time>NOTE 02</time>
+          <div>
+            <h4>错误信息是最容易被低估的产品细节</h4>
+            <p>抛一个堆栈出去很简单，但用户看到的是"又要去搜索了"。好的错误提示应该直接给出下一步：缺什么、怎么装、命令是什么。</p>
+          </div>
+        </li>
+        <li>
+          <time>NOTE 03</time>
+          <div>
+            <h4>本地优先不只是情怀</h4>
+            <p>数据留在本地，意味着断网能用、意味着不用担心服务关停、也意味着不用为别人的服务器付费。对一个人维护的项目来说，这是最省事的选择。</p>
+          </div>
+        </li>
+        <li>
+          <time>NOTE 04</time>
+          <div>
+            <h4>不要为了显得专业而增加抽象层</h4>
+            <p>见过太多项目为了"可扩展性"提前套了三层封装，结果需求一变全得推翻。我现在的原则是：第二次用到同一段逻辑时再抽象。</p>
+          </div>
+        </li>
+        <li>
+          <time>NOTE 05</time>
+          <div>
+            <h4>发布半成品比不发布好</h4>
+            <p>只要核心功能跑得通、不会损坏用户数据，就值得发出去。真实用户的反馈比自己在脑子里模拟一百遍有用。</p>
+          </div>
+        </li>
+        <li>
+          <time>NOTE 06</time>
+          <div>
+            <h4>界面不需要漂亮，需要诚实</h4>
+            <p>状态要看得见，进度要真实，做不到的事要直说。一个会明确告诉你"这步失败了"的工具，比一个转圈圈最后假装成功的工具可靠得多。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 记录 ============ -->
+  <section class="section" id="log">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="sec-num">06</span><h2>记录</h2></div>
+        <p class="sec-note">按时间倒序，只记发生过的。</p>
+      </div>
+
+      <ul class="log">
+        <li>
+          <time>2026-09-12</time>
+          <div>
+            <h4>三个站点改版</h4>
+            <p>个人主页、工作室官网、巨天 Agent 官网统一改为编辑排版风格，去掉装饰性动画，内容大幅扩充。</p>
+          </div>
+        </li>
+        <li>
+          <time>2026-09-12</time>
+          <div>
+            <h4>巨天 Agent 官网上线</h4>
+            <p>为正在打磨的桌面智能体单独做了一个站点，写清能力边界、思考程度与技术规格。</p>
+          </div>
+        </li>
+        <li>
+          <time>2026-08-29</time>
+          <div>
+            <h4>Arcadia Base 完成</h4>
+            <p>网页版方块地图运行器跑通，384 种方块贴图与 13 种流体可用。</p>
+          </div>
+        </li>
+        <li>
+          <time>2026-08-28</time>
+          <div>
+            <h4>两个工具同日发布</h4>
+            <p>WineAppRunner 与 KittenN Cyberpunk Editor 先后完成，都是为了解决自己遇到的具体问题。</p>
+          </div>
+        </li>
+        <li>
+          <time>2026-08-27</time>
+          <div>
+            <h4>注册 GitHub</h4>
+            <p>开始把写过的东西公开出来。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 联系 ============ -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <span class="sec-num">07</span>
+          <h2 style="font-family:var(--serif);font-size:30px">联系</h2>
         </div>
-        <!-- 需要补充邮箱时，取消下方注释并替换地址
-        <a class="btn btn-ghost" href="mailto:your@email.com">发送邮件</a> -->
+        <div>
+          <p>
+            想聊项目、报 Bug、或者只是打个招呼，GitHub 是最快的方式。
+            我读每一条 Issue，但回复速度取决于课业安排——如果不急，
+            请给它一点时间。
+          </p>
+          <p>邮箱暂未公开。有正式事项请在 Issue 里说明，我会看到。</p>
+          <dl class="contact-rows">
+            <div><dt>GitHub</dt><dd><a href="https://github.com/deepseekv5" target="_blank" rel="noopener">github.com/deepseekv5</a></dd></div>
+            <div><dt>仓库</dt><dd><a href="https://github.com/deepseekv5?tab=repositories" target="_blank" rel="noopener">全部公开仓库</a></dd></div>
+            <div><dt>巨天工作室</dt><dd><a href="https://deepseekv5.github.io/jutian-studio/" target="_blank" rel="noopener">工作室官网</a></dd></div>
+            <div><dt>巨天 Agent</dt><dd><a href="https://deepseekv5.github.io/jutian-agent/" target="_blank" rel="noopener">产品官网</a></dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <div class="f-brand"><strong>deepseekv5</strong><span>PERSONAL SITE</span></div>
-    <nav class="f-links">
-      <a href="https://github.com/deepseekv5" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://deepseekv5.github.io/jutian-studio/" target="_blank" rel="noopener">巨天工作室</a>
-      <a href="https://deepseekv5.github.io/jutian-agent/" target="_blank" rel="noopener">巨天 Agent</a>
-      <a href="#work">作品</a>
-      <a href="#contact">联系</a>
-    </nav>
-    <p class="f-copy">© <span id="year"></span> deepseekv5 · Built with care.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">deepseekv5<span>PERSONAL SITE</span></div>
+      </div>
+      <div>
+        <h5>作品</h5>
+        <ul>
+          <li><a href="https://github.com/deepseekv5/kittenN-cyberpunk-editor" target="_blank" rel="noopener">KittenN Cyberpunk Editor</a></li>
+          <li><a href="https://github.com/deepseekv5/arcadia-base" target="_blank" rel="noopener">Arcadia Base</a></li>
+          <li><a href="https://github.com/deepseekv5/WineAppRunner" target="_blank" rel="noopener">WineAppRunner</a></li>
+          <li><a href="https://deepseekv5.github.io/jutian-agent/" target="_blank" rel="noopener">巨天 Agent</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>站点</h5>
+        <ul>
+          <li><a href="#work">作品</a></li>
+          <li><a href="#notes">想法</a></li>
+          <li><a href="#log">记录</a></li>
+          <li><a href="https://deepseekv5.github.io/jutian-studio/" target="_blank" rel="noopener">巨天工作室</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© 2026 deepseekv5</span>
+      <span>本站纯静态 · 无统计 · 无 Cookie</span>
+      <span>最后更新 2026-09-12</span>
+    </div>
   </div>
 </footer>
 
