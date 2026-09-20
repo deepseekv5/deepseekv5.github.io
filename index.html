@@ -25,6 +25,11 @@
     </nav>
     <div class="head-tools">
       <a class="tools-link" href="https://github.com/deepseekv5" target="_blank" rel="noopener">GITHUB</a>
+      <div class="mode-switch" id="modeSwitch">
+        <button type="button" data-mode="normal" class="on">正常</button>
+        <button type="button" data-mode="neko">猫娘</button>
+        <button type="button" data-mode="funny">搞笑</button>
+      </div>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深浅主题">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4" stroke-linecap="round"/></svg>
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 13.2A8.6 8.6 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg>
@@ -48,30 +53,30 @@
       </dl>
 
       <h1 class="hero-title">
-        你好，我是 deepseekv5
-        <small>Student, Developer, One-person Studio</small>
+        <span data-v="title">你好，我是 deepseekv5</span>
+        <small data-v="subtitle">Student, Developer, One-person Studio</small>
       </h1>
 
       <div class="hero-body">
         <div>
-          <p class="hero-lede">
+          <p class="hero-lede" data-v="lede1">
             我是一名来自中国的中学生。课余时间写代码，主要做三件事：
             把麻烦的操作包装成图形工具的桌面应用、在浏览器里重建 3D 场景、
             以及用自动化脚本去增强别人已经做好的编辑器。
           </p>
-          <p class="hero-lede">
+          <p class="hero-lede" data-v="lede2">
             这些东西都放在 GitHub 上，全部开源。我自己一个人做，
             所以更新节奏取决于课业松紧——这点我不掩饰。
           </p>
         </div>
         <aside class="hero-aside">
           <span class="label">关于这个站</span>
-          <p>
+          <p data-v="aside1">
             这里是我的个人主页，用来放作品索引和一些零碎想法。
             工作室的正式信息在巨天工作室官网，产品介绍在巨天 Agent 官网，
             这一页只讲我自己。
           </p>
-          <p style="margin-top:10px">
+          <p data-v="aside2" style="margin-top:10px">
             如果是来找我某个项目的，直接跳到“作品”那节更快。
           </p>
         </aside>
@@ -93,8 +98,8 @@
 
   <div class="wrap">
     <p class="pull">
-      「与其做一个漂亮的半成品，不如做一个能跑的丑东西。」
-      <cite>—— 我判断要不要发布一个项目的标准，目前还没变过</cite>
+      <span data-v="pull">「与其做一个漂亮的半成品，不如做一个能跑的丑东西。」</span>
+      <cite data-v="cite">—— 我判断要不要发布一个项目的标准，目前还没变过</cite>
     </p>
   </div>
 
@@ -102,8 +107,8 @@
   <section class="section" id="intro">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">01</span><h2>自我介绍</h2></div>
-        <p class="sec-note">尽量说实话，不包装。</p>
+        <div><span class="sec-num">01</span><h2 data-v="s1">自我介绍</h2></div>
+        <p class="sec-note" data-v="n1">尽量说实话，不包装。</p>
       </div>
 
       <div class="entry">
@@ -152,24 +157,24 @@
   <section class="section" id="now">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">02</span><h2>现在在做什么</h2></div>
-        <p class="sec-note">三条主线，外加一个正在打磨的产品。</p>
+        <div><span class="sec-num">02</span><h2 data-v="s2">现在在做什么</h2></div>
+        <p class="sec-note" data-v="n2">三条主线，外加一个正在打磨的产品。</p>
       </div>
 
       <ol class="numlist">
         <li>
           <span class="n">01</span>
-          <h3>桌面工具</h3>
+          <h3 data-v="u1">桌面工具</h3>
           <p>把命令行里那些需要查文档才能完成的流程，包装成一个双击就能用的应用。macOS 优先，因为它就是我每天在用的系统；能跨平台的尽量跨。代表作是 WineAppRunner。</p>
         </li>
         <li>
           <span class="n">02</span>
-          <h3>网页与图形</h3>
+          <h3 data-v="u2">网页与图形</h3>
           <p>用 Three.js 在浏览器里做 3D 场景，以及用 Playwright 给现有编辑器注入增强。这类项目不需要用户安装任何东西，打开链接就是成品，我很喜欢这一点。代表作是 Arcadia Base 和 KittenN 主题。</p>
         </li>
         <li>
           <span class="n">03</span>
-          <h3>自动化</h3>
+          <h3 data-v="u3">自动化</h3>
           <p>把重复劳动交给脚本。桌面工具里藏着大量可以自动化的环节，装依赖、改配置、批量重命名——这些事机器做比人做可靠得多。</p>
         </li>
         <li>
@@ -200,8 +205,8 @@
   <section class="section" id="work">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">03</span><h2>作品</h2></div>
-        <p class="sec-note">全部开源。点进去可以直接看代码。</p>
+        <div><span class="sec-num">03</span><h2 data-v="s3">作品</h2></div>
+        <p class="sec-note" data-v="n3">全部开源。点进去可以直接看代码。</p>
       </div>
 
       <article class="entry">
@@ -217,7 +222,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">给积木编辑器换一套深色玻璃皮肤。</p>
+          <p class="entry-sub" data-v="e1">给积木编辑器换一套深色玻璃皮肤。</p>
           <p>
             起因只是晚上写代码时觉得编辑器太刺眼。实现方式不是插件，
             而是用 Playwright 驱动本机 Chrome 打开编辑器再注入样式，
@@ -242,7 +247,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">在浏览器里走进别人搭好的方块地图。</p>
+          <p class="entry-sub" data-v="e2">在浏览器里走进别人搭好的方块地图。</p>
           <p>
             最花时间的部分是把方块贴图在构建期合成图集，这样运行时完全离线。
             其次是流体渲染——如果不同材质交界处不做内部面剔除，帧率会很难看。
@@ -266,7 +271,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">在 Mac 上跑 Windows 程序，不装虚拟机。</p>
+          <p class="entry-sub" data-v="e3">在 Mac 上跑 Windows 程序，不装虚拟机。</p>
           <p>
             Wine 本身很好用，但它要求你懂命令行、懂 X11、懂环境变量。
             这个项目就是把这些门槛拆掉：选文件、点运行、看日志。
@@ -290,7 +295,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">能干活的智能体，而不是聊天框。</p>
+          <p class="entry-sub" data-v="e4">能干活的智能体，而不是聊天框。</p>
           <p>
             这是目前投入最多的项目，有独立的官网写得更详细。
             一句话概括：它能操作终端和文件，能写代码和 PPT，能听懂人话也能说话。
@@ -308,8 +313,8 @@
   <section class="section" id="tools">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">04</span><h2>我用的工具</h2></div>
-        <p class="sec-note">配置清单。仅供参考，不构成推荐。</p>
+        <div><span class="sec-num">04</span><h2 data-v="s4">我用的工具</h2></div>
+        <p class="sec-note" data-v="n4">配置清单。仅供参考，不构成推荐。</p>
       </div>
 
       <div class="tbl-wrap">
@@ -336,29 +341,29 @@
   <section class="section" id="notes">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">05</span><h2>一些想法</h2></div>
-        <p class="sec-note">零散的、可能会变的看法。按想到先后排列。</p>
+        <div><span class="sec-num">05</span><h2 data-v="s5">一些想法</h2></div>
+        <p class="sec-note" data-v="n5">零散的、可能会变的看法。按想到先后排列。</p>
       </div>
 
       <ul class="log">
         <li>
           <time>NOTE 01</time>
           <div>
-            <h4>工具的价值取决于最短使用路径</h4>
+            <h4 data-v="i1">工具的价值取决于最短使用路径</h4>
             <p>一个功能再强，如果每次用都要先读文档、再改配置，它的实际使用频率会趋近于零。我把"从下载到跑起来需要几步"当成硬指标。</p>
           </div>
         </li>
         <li>
           <time>NOTE 02</time>
           <div>
-            <h4>错误信息是最容易被低估的产品细节</h4>
+            <h4 data-v="i2">错误信息是最容易被低估的产品细节</h4>
             <p>抛一个堆栈出去很简单，但用户看到的是"又要去搜索了"。好的错误提示应该直接给出下一步：缺什么、怎么装、命令是什么。</p>
           </div>
         </li>
         <li>
           <time>NOTE 03</time>
           <div>
-            <h4>本地优先不只是情怀</h4>
+            <h4 data-v="i3">本地优先不只是情怀</h4>
             <p>数据留在本地，意味着断网能用、意味着不用担心服务关停、也意味着不用为别人的服务器付费。对一个人维护的项目来说，这是最省事的选择。</p>
           </div>
         </li>
@@ -391,8 +396,8 @@
   <section class="section" id="log">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">06</span><h2>记录</h2></div>
-        <p class="sec-note">按时间倒序，只记发生过的。</p>
+        <div><span class="sec-num">06</span><h2 data-v="s6">记录</h2></div>
+        <p class="sec-note" data-v="n6">按时间倒序，只记发生过的。</p>
       </div>
 
       <ul class="log">
@@ -441,10 +446,10 @@
       <div class="contact-grid">
         <div>
           <span class="sec-num">07</span>
-          <h2 style="font-family:var(--serif);font-size:30px">联系</h2>
+          <h2 data-v="s7" style="font-family:var(--serif);font-size:30px">联系</h2>
         </div>
         <div>
-          <p>
+          <p data-v="contact1">
             想聊项目、报 Bug、或者只是打个招呼，GitHub 是最快的方式。
             我读每一条 Issue，但回复速度取决于课业安排——如果不急，
             请给它一点时间。
@@ -490,7 +495,7 @@
     </div>
     <div class="foot-note">
       <span>© 2026 deepseekv5</span>
-      <span>本站纯静态 · 无统计 · 无 Cookie</span>
+      <span data-v="foot">本站纯静态 · 无统计 · 无 Cookie</span>
       <span>最后更新 2026-09-16</span>
       <span>错别字和过时的信息欢迎告诉我</span>
     </div>

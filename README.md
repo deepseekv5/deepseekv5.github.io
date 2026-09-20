@@ -21,6 +21,10 @@ assets/js/main.js      # 主题切换、移动端菜单、导航高亮
 | 作品 | 「作品」章节的 `<article class="entry">` |
 | 想法 / 记录 | 同名章节的 `<ul class="log">` 条目 |
 
+## 风格切换
+
+页眉右侧三档切换（正常 / 猫娘 / 搞笑），会替换主要文案，选择会记住。文案表在 `assets/js/main.js` 的 `MODES`。
+
 ## 相关
 
 - 巨天工作室：<https://deepseekv5.github.io/jutian-studio/>
