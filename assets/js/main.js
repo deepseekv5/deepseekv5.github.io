@@ -48,6 +48,41 @@
       i1: '工具的价值 = 最短使用路径', i2: '报错信息是最被低估的细节', i3: '本地优先，主要是为了省心',
       contact1: '想聊项目、报 Bug 或打个招呼，走 GitHub。我看每一条 Issue，回复速度取决于我作业写完没有。',
       foot: '本站纯静态 · 没有追踪 · 想看多久看多久'
+    },
+    terminal: {
+      title: 'deepseekv5@macbook ~ %', subtitle: 'whoami → student, developer',
+      lede1: '# 课余时间写代码。',
+      lede2: '# 全部开源，更新看作业多不多。',
+      pull: '// 能跑的丑东西 > 跑不起来的漂亮东西', cite: 'notes.md',
+      foot: '-- end of file --'
+    },
+    paper: {
+      title: 'deepseekv5', subtitle: '个人主页 · 二〇二六年',
+      lede1: '本站记录一名中学生课余时间的开发工作，涉及桌面工具、网页图形与自动化。',
+      lede2: '所有作品均公开发布于代码托管平台，许可宽松。',
+      pull: '「与其做一个漂亮的半成品，不如做一个能跑的丑东西。」', cite: '—— 本人自述',
+      foot: '本站无广告 · 无追踪'
+    },
+    blueprint: {
+      title: 'deepseekv5', subtitle: 'PROFILE SHEET / REV. 2026',
+      lede1: '身份：学生 / 独立开发者。所在地：中国。',
+      lede2: '输出：桌面工具、网页图形、自动化脚本、桌面智能体。',
+      pull: '原则：轻依赖、可离线、留在本机。', cite: 'DWG NO. D5-001',
+      foot: 'DRAFT'
+    },
+    note: {
+      title: 'deepseekv5', subtitle: '我的小本子',
+      lede1: '放学后写的代码，都记在这里。',
+      lede2: '还有一些想到哪写到哪的想法。',
+      pull: '先跑起来，再谈别的。', cite: '—— 某天晚上写的',
+      foot: '写完了，谢谢你看'
+    },
+    pixel: {
+      title: 'DEEPSEEKV5', subtitle: 'PLAYER 1 READY',
+      lede1: '职业：学生 / 开发者。装备：一台 Mac。',
+      lede2: '已解锁：三个开源项目。进行中：巨天 Agent。',
+      pull: 'SHIP IT, EVEN IF IT IS UGLY.', cite: '1 CREDIT',
+      foot: 'THANKS FOR PLAYING'
     }
   };
 
@@ -63,21 +98,14 @@
       var pack = MODES[m] || {};
       el.textContent = pack[k] || el.getAttribute('data-orig');
     });
-    var btns = document.querySelectorAll('.mode-switch button');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.toggle('on', btns[i].getAttribute('data-mode') === m);
-    }
+    var sel = document.getElementById('modeSelect');
+    if (sel) sel.value = m;
     try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
     if (window.__onMode) window.__onMode(m);
   }
 
-  var sw = document.getElementById('modeSwitch');
-  if (sw) {
-    sw.addEventListener('click', function (e) {
-      var b = e.target.closest ? e.target.closest('button') : null;
-      if (b) applyMode(b.getAttribute('data-mode'));
-    });
-  }
+  var selBox = document.getElementById('modeSelect');
+  if (selBox) selBox.addEventListener('change', function () { applyMode(selBox.value); });
   var savedMode = null;
   try { savedMode = localStorage.getItem(MODE_KEY); } catch (e) {}
   if (savedMode && MODES[savedMode]) applyMode(savedMode);
