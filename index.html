@@ -7,10 +7,11 @@
 <meta name="description" content="deepseekv5 的个人主页：来自中国的中学生、独立开发者、巨天工作室主理人。开源作品涵盖桌面工具、3D 网页运行器、编辑器主题增强，以及桌面 AI 智能体巨天 Agent。" />
 <meta name="theme-color" content="#f7f4ee" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f7f4ee'/%3E%3Cpath d='M8 7h16v3H11v12h13v3H8z' fill='%232f5d46'/%3E%3C/svg%3E" />
+<link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="assets/css/style.css" /></noscript>
 <link rel="stylesheet" href="assets/css/style.css" />
 <!-- SEO -->
 <meta name="google-site-verification" content="0QuN1OhIfbTyOqvgfSHFW5g3BDeg6sVZmkN8u-fIl1M" />
-<meta name="keywords" content="deepseekv5,个人主页,独立开发者,中学生编程,开源项目,巨天工作室,巨天Agent,JavaScript,Python,TypeScript,Electron,Three.js,作品集,学生开发者" />
 <meta name="author" content="deepseekv5" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <link rel="canonical" href="https://deepseekv5.github.io/" />
@@ -63,6 +64,20 @@
   "@type": "Organization",
   "name": "巨天工作室",
   "url": "https://deepseekv5.github.io/jutian-studio/"
+ }
+}</script>
+<!-- 站点级结构化数据 -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "deepseekv5",
+ "url": "https://deepseekv5.github.io/",
+ "inLanguage": "zh-CN",
+ "publisher": {
+  "@type": "Person",
+  "name": "deepseekv5",
+  "url": "https://deepseekv5.github.io/",
+  "sameAs": "https://github.com/deepseekv5"
  }
 }</script>
 </head>
@@ -251,7 +266,7 @@
 
       <div class="tbl-wrap" style="margin-top:26px">
         <table class="tbl">
-          <thead><tr><th>事情</th><th>投入</th><th>现在的状态</th></tr></thead>
+          <thead><tr><th scope="col">事情</th><th scope="col">投入</th><th scope="col">现在的状态</th></tr></thead>
           <tbody>
             <tr><td>巨天 Agent</td><td>最多</td><td>预览版，打磨稳定性与错误提示</td></tr>
             <tr><td>Arcadia Base</td><td>偶尔</td><td>已发布，视反馈修</td></tr>
@@ -384,7 +399,7 @@
 
       <div class="tbl-wrap">
         <table class="tbl">
-          <thead><tr><th>类别</th><th>用什么</th><th>为什么</th></tr></thead>
+          <thead><tr><th scope="col">类别</th><th scope="col">用什么</th><th scope="col">为什么</th></tr></thead>
           <tbody>
             <tr><td>电脑</td><td>Mac（Apple Silicon）</td><td>续航和静音，宿舍里不吵</td></tr>
             <tr><td>系统</td><td>macOS</td><td>Unix 环境 + 常用软件齐全，不用折腾</td></tr>
@@ -414,42 +429,42 @@
         <li>
           <time>NOTE 01</time>
           <div>
-            <h4 data-v="i1">工具的价值取决于最短使用路径</h4>
+            <h3 data-v="i1">工具的价值取决于最短使用路径</h4>
             <p>一个功能再强，如果每次用都要先读文档、再改配置，它的实际使用频率会趋近于零。我把"从下载到跑起来需要几步"当成硬指标。</p>
           </div>
         </li>
         <li>
           <time>NOTE 02</time>
           <div>
-            <h4 data-v="i2">错误信息是最容易被低估的产品细节</h4>
+            <h3 data-v="i2">错误信息是最容易被低估的产品细节</h4>
             <p>抛一个堆栈出去很简单，但用户看到的是"又要去搜索了"。好的错误提示应该直接给出下一步：缺什么、怎么装、命令是什么。</p>
           </div>
         </li>
         <li>
           <time>NOTE 03</time>
           <div>
-            <h4 data-v="i3">本地优先不只是情怀</h4>
+            <h3 data-v="i3">本地优先不只是情怀</h4>
             <p>数据留在本地，意味着断网能用、意味着不用担心服务关停、也意味着不用为别人的服务器付费。对一个人维护的项目来说，这是最省事的选择。</p>
           </div>
         </li>
         <li>
           <time>NOTE 04</time>
           <div>
-            <h4>不要为了显得专业而增加抽象层</h4>
+            <h3>不要为了显得专业而增加抽象层</h4>
             <p>见过太多项目为了"可扩展性"提前套了三层封装，结果需求一变全得推翻。我现在的原则是：第二次用到同一段逻辑时再抽象。</p>
           </div>
         </li>
         <li>
           <time>NOTE 05</time>
           <div>
-            <h4>发布半成品比不发布好</h4>
+            <h3>发布半成品比不发布好</h4>
             <p>只要核心功能跑得通、不会损坏用户数据，就值得发出去。真实用户的反馈比自己在脑子里模拟一百遍有用。</p>
           </div>
         </li>
         <li>
           <time>NOTE 06</time>
           <div>
-            <h4>界面不需要漂亮，需要诚实</h4>
+            <h3>界面不需要漂亮，需要诚实</h4>
             <p>状态要看得见，进度要真实，做不到的事要直说。一个会明确告诉你"这步失败了"的工具，比一个转圈圈最后假装成功的工具可靠得多。</p>
           </div>
         </li>
@@ -469,35 +484,35 @@
         <li>
           <time>2026-09-12</time>
           <div>
-            <h4>三个站点改版</h4>
+            <h3>三个站点改版</h4>
             <p>个人主页、工作室官网、巨天 Agent 官网统一改为编辑排版风格，去掉装饰性动画，内容大幅扩充。</p>
           </div>
         </li>
         <li>
           <time>2026-09-12</time>
           <div>
-            <h4>巨天 Agent 官网上线</h4>
+            <h3>巨天 Agent 官网上线</h4>
             <p>为正在打磨的桌面智能体单独做了一个站点，写清能力边界、思考程度与技术规格。</p>
           </div>
         </li>
         <li>
           <time>2026-08-29</time>
           <div>
-            <h4>Arcadia Base 完成</h4>
+            <h3>Arcadia Base 完成</h4>
             <p>网页版方块地图运行器跑通，384 种方块贴图与 13 种流体可用。</p>
           </div>
         </li>
         <li>
           <time>2026-08-28</time>
           <div>
-            <h4>两个工具同日发布</h4>
+            <h3>两个工具同日发布</h4>
             <p>WineAppRunner 与 KittenN Cyberpunk Editor 先后完成，都是为了解决自己遇到的具体问题。</p>
           </div>
         </li>
         <li>
           <time>2026-08-27</time>
           <div>
-            <h4>注册 GitHub</h4>
+            <h3>注册 GitHub</h4>
             <p>开始把写过的东西公开出来。</p>
           </div>
         </li>
