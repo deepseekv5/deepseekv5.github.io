@@ -8,6 +8,9 @@
 index.html
 assets/css/style.css
 assets/js/main.js      # 主题切换、移动端菜单、导航高亮
+assets/og.png         # 社交分享预览图 1200x630
+robots.txt            # 抓取规则
+sitemap.xml           # 含三个站点的站点地图
 ```
 
 ## 改内容
