@@ -1,9 +1,11 @@
-# robots.txt — 巨天工作室 / deepseekv5
-# 纯静态站点，无追踪、无 Cookie，全站公开。
+# robots.txt — deepseekv5
+# 全站公开，唯小说区需要密码且对搜索引擎隐藏。
 
 User-agent: *
 Allow: /
 Disallow: /404.html
+Disallow: /novels-lock.html
+Disallow: /novels/
 
 # AI 爬虫
 User-agent: GPTBot
